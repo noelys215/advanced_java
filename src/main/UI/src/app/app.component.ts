@@ -56,10 +56,25 @@ export class AppComponent implements OnInit {
 
 
   onSubmit({value, valid}: { value: Roomsearch, valid: boolean }) {
+    /* USD to CAD rate */
+    const usdToCadRate = 1.36831;
+    /* USD to EUR rate */
+    const usdToEurRate = 0.929293;
+
     this.getAll().subscribe(
       rooms => {
         console.log(Object.values(rooms)[0]);
         this.rooms = <Room[]>Object.values(rooms)[0];
+
+
+        /*TODO: Calculate prices in CAD & EUR for each room */
+        this.rooms.forEach(room => {
+          const priceUSD = parseFloat(room.price);
+          /* Convert to CAD */
+          room.priceCAD = (priceUSD * usdToCadRate).toFixed(2);
+          /* Convert to EUR */
+          room.priceEUR = (priceUSD * usdToEurRate).toFixed(2);
+        });
       }
     );
   }
@@ -108,6 +123,9 @@ export interface Room {
   roomNumber: string;
   price: string;
   links: string;
+  /* B2 Prices */
+  priceCAD?: string;
+  priceEUR?: string;
 
 }
 
