@@ -95,6 +95,24 @@
         </div>
       </div>
     </article>
+
+    <h1 style="text-align: center">Online Live Presentation Time: </h1>
+    <div *ngIf="presentationTimes && presentationTimes.length === 3" class="presentation-times">
+      <div class="presentation-time-item">
+        <h3 class="presentation-time-label">Presentation Time (ET):</h3>
+        <span class="presentation-time-value">{{ presentationTimes[0] }}</span>
+      </div>
+      <div class="presentation-time-item">
+        <h3 class="presentation-time-label">Presentation Time (MT):</h3>
+        <span class="presentation-time-value">{{ presentationTimes[1] }}</span>
+      </div>
+      <div class="presentation-time-item">
+        <h3 class="presentation-time-label">Presentation Time (UTC):</h3>
+        <span class="presentation-time-value">{{ presentationTimes[2] }}</span>
+      </div>
+    </div>
+
+
   </div><!-- welcome -->
   <div class="scene" id="hotelinfo">
     <article class="heading">

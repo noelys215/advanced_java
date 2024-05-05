@@ -939,8 +939,7 @@ footer #socialmedia ul li img {
 /*# sourceMappingURL=style.css.map */
 
 
-/**/
-/* Welcome message styles */
+/*TODO: Welcome message styles */
 .welcome-message {
   color: #fff;
   text-align: center;
@@ -954,4 +953,38 @@ footer #socialmedia ul li img {
   opacity: 85%;
 }
 
+/*TODO: Presentation Time Styles */
+.presentation-times {
+  background-color: rgba(52, 58, 64, 0.5);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  margin-top: 20px;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 
+.presentation-time-item {
+  margin-bottom: 10px;
+}
+
+.presentation-time-label {
+  color: #fff;
+  margin: 0;
+  font: 200 1.5em/3em "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.presentation-time-value {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 768px) {
+  .presentation-times {
+    width: 90%;
+  }
+}

@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
   currentCheckInVal!: string;
   currentCheckOutVal!: string;
   public welcomeMessage: String[] = [];
+  public presentationTimes: string[] = [];
 
   ngOnInit() {
     this.roomsearch = new FormGroup({
@@ -47,6 +48,17 @@ export class AppComponent implements OnInit {
       this.currentCheckInVal = x.checkin;
       this.currentCheckOutVal = x.checkout;
     });
+
+
+    /*TODO: Retrieve the presentation times on component initialization */
+    this.getPresentationTimes().subscribe(times => {
+      this.presentationTimes = times;
+    })
+  }
+
+  /*TODO: Fetch the time zone data via HTTP GET */
+  getPresentationTimes(): Observable<string[]> {
+    return this.httpClient.get<string[]>(this.baseURL + '/api/presentation-time');
   }
 
   /*TODO: Fetch Messages */
