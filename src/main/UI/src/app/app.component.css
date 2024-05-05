@@ -937,3 +937,21 @@ footer #socialmedia ul li img {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/**/
+/* Welcome message styles */
+.welcome-message {
+  color: #fff;
+  text-align: center;
+  background-color: #343a40;
+  padding: 10px;
+  margin: 10px auto;
+  width: 80%;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1.25rem;
+  opacity: 85%;
+}
+
+
